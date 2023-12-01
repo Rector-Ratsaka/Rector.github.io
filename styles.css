@@ -1,0 +1,70 @@
+
+body {
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+h1,p {color:blue}
+
+#out{
+	padding:5px;
+	border-top:1px solid #262626;
+	border-left:1px solid #262626;
+	border-right:2px outset #262626;
+	border-bottom:2px outset #262626;
+}
+#InPut{
+	font-size:18px;
+	text-align:right;
+	overflow: hidden;
+	width:268px;
+	word-wrap: break-word;
+	margin-bottom:-2px;
+}
+#OutPut{
+	font-size:20px;
+	padding:3px;
+	margin:2px;
+	cursor:text;
+	text-align:right;
+	background-color:blue;
+	border:1px solid #336699;
+	border-radius: 0px;
+}
+
+.nums{
+	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 4px;
+	text-align:center;
+	width:50px;
+	height:30px;
+	margin:1px;
+	border:1px solid #a2bbd4;
+	border-radius: 3px;
+	font-family:arial,helvetica,sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	background-color:RoyalBlue;
+}
+.ops{
+	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 4px;
+	text-align:center;
+	width:50px;
+	height:30px;
+	margin:1px;
+	border:1px solid #a2bbd4;
+	border-radius: 3px;
+	font-family:arial,helvetica,sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	background-color:SkyBlue;
+}

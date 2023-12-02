@@ -40,10 +40,10 @@ h1,p {color:blue}
 	display: inline-block;
 	display: table-cell;
 	vertical-align: middle;
-	padding: 4px;
+	padding: 5px;
 	text-align:center;
-	width:50px;
-	height:30px;
+	width:60px;
+	height:35px;
 	margin:1px;
 	border:1px solid #a2bbd4;
 	border-radius: 3px;
@@ -56,10 +56,10 @@ h1,p {color:blue}
 	display: inline-block;
 	display: table-cell;
 	vertical-align: middle;
-	padding: 4px;
+	padding: 5px;
 	text-align:center;
-	width:50px;
-	height:30px;
+	width:60px;
+	height:35px;
 	margin:1px;
 	border:1px solid #a2bbd4;
 	border-radius: 3px;

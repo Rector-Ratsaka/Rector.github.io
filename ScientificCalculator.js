@@ -19,19 +19,20 @@ function r(value) {
      } else if (value === 'back') {
        expression = expression.slice(0, -1); // Remove the last character
      } else {
-       // Check for specific cases
-           switch (value) {
-             case 'sin':
-             case 'cos':
-             case 'tan':
-               expression += `Math.${value}(`; // For trigonometric functions
-               break;
-             case 'pi':
-               expression += 'Math.PI';
-               break;
-             default:
-               expression += value;
-           }
+       const funcs = ['sin', 'cos', 'tan', 'sqrt','exp','log10'];
+       if (funcs.includes(value)) {
+         expression += `Math.${value}(`;
+       } else if (value === '%') {
+         expression += '/100';
+       } else if (value === 'pi') {
+         expression += 'Math.PI';
+       }else if (value=='fact'){
+         expression+='factorial(';
+       }else if (value=='pow'){
+         expression+='**';
+       } else {
+         expression += value;
+       }
      }
   updateDisplay();
 }
@@ -51,38 +52,29 @@ function calculate() {
   }
 }
 
-function setTrigMode(mode) {
-  trigMode = mode;
-  // Remove 'active' class from all buttons
-  document.getElementById('degButton').classList.remove('active');
-  document.getElementById('radButton').classList.remove('active');
-  // Add 'active' class to the selected button
-  document.getElementById(`${mode}Button`).classList.add('active');
+//function setTrigMode(mode) {
+//  trigMode = mode;
+//  // Remove 'active' class from all buttons
+//  document.getElementById('degButton').classList.remove('active');
+//  document.getElementById('radButton').classList.remove('active');
+//  // Add 'active' class to the selected button
+//  document.getElementById(`${mode}Button`).classList.add('active');
+//
+//  updateDisplay();
+//}
+//
+//
+//// trigMode will be 'deg' or 'rad'
+//function trigFunctions(value) {
+//  if (trigMode === 'deg') {
+//    // Convert degrees to radians before calling trigonometric functions
+//    value = (value * Math.PI) / 180;
+//  }
 
-  updateDisplay();
+function factorial(n){
+    if (n==0 || n==1){
+        return 1;
+    }else{ return n*factorial(n-1)}
 }
 
 
-// trigMode will be 'deg' or 'rad'
-function trigFunctions(value) {
-  if (trigMode === 'deg') {
-    // Convert degrees to radians before calling trigonometric functions
-    value = (value * Math.PI) / 180;
-  }
-
-  switch (expression) {
-    case 'sin':
-      expression = 'Math.sin(value)';
-      break;
-    case 'exp':
-      expression = Math.exp(value);
-      break;
-    case 'cos':
-      expression = Math.cos(value);
-      break;
-    case 'tan':
-      expression = Math.tan(value);
-      break;
-  }
-  updateDisplay();
-}

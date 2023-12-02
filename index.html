@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scientific Calculator</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
@@ -10,21 +11,21 @@
 <body>
     <h1>Scientific Calculator</h1>
     <p>This is an online Scientific Calculator.<br>You can click the buttons or type to perform calculations.</p>
-    <button onclick="toggleDarkLightMode()">Toggle dark/light mode</button>
+    <button ontouchend="toggleDarkLightMode()">Toggle dark/light mode</button>
 
     <table align="center"><tr><td id="out">
-        <button onclick="setTrigMode('deg')" id="degButton">Deg</button>
-        <button onclick="setTrigMode('rad')" id="radButton">Rad</button>
+        <button ontouchend="setTrigMode('deg')" id="degButton">Deg</button>
+        <button ontouchend="setTrigMode('rad')" id="radButton">Rad</button>
         <div>
             <div id="InPut">&nbsp;</div>
             <div id="OutPut">0</div>
         </div>
         <div>
-            <div><span onclick="trigFunctions('sin')" class="ops">sin</span><span onclick="r('%')" class="ops">%</span><span onclick="r('(')" class="ops">(</span><span onclick="r(')')" class="ops">)</span><span onclick="r('C')" class="ops">AC</span><span onclick="r('back')" class="ops">&#8592;</span></div>
-            <div><span onclick="trigFunctions('cos')" class="ops">cos</span><span onclick="r('sqrt')" class="ops">&#8730;</span><span onclick="r(7)" class="nums">7</span><span onclick="r(8)" class="nums">8</span><span onclick="r(9)" class="nums">9</span><span onclick="r('+')" class="ops">+</span></div>
-            <div><span onclick="trigFunctions('tan')" class="ops">tan</span><span onclick="r('fact')" class="ops">x!</span><span onclick="r(4)" class="nums">4</span><span onclick="r(5)" class="nums">5</span><span onclick="r(6)" class="nums">6</span><span onclick="r('-')" class="ops">&ndash;</span></div>
-            <div><span onclick="r('log')" class="ops">log</span><span onclick="r('pow')" class="ops">x<sup>y</sup></span><span onclick="r(1)" class="nums">1</span><span onclick="r(2)" class="nums">2</span><span onclick="r(3)" class="nums">3</span><span onclick="r('*')" class="ops">&#215;</span></div>
-            <div><span onclick="r('exp')" class="nums">e</span><span onclick="r('pi')" class="nums">&pi;</span><span onclick="r('.')" class="nums">.</span><span onclick="r(0)" class="nums">0</span><span onclick="r('=')" style="background:blue" class="ops">=</span><span onclick="r('/')" class="ops">&#247;</span></div>
+            <div><span ontouchend="trigFunctions('sin')" class="ops">sin</span><span ontouchend="r('%')" class="ops">%</span><span ontouchend="r('(')" class="ops">(</span><span ontouchend="r(')')" class="ops">)</span><span ontouchend="r('C')" class="ops">AC</span><span ontouchend="r('back')" class="ops">&#8592;</span></div>
+            <div><span ontouchend="trigFunctions('cos')" class="ops">cos</span><span ontouchend="r('sqrt')" class="ops">&#8730;</span><span ontouchend="r(7)" class="nums">7</span><span ontouchend="r(8)" class="nums">8</span><span ontouchend="r(9)" class="nums">9</span><span ontouchend="r('+')" class="ops">+</span></div>
+            <div><span ontouchend="trigFunctions('tan')" class="ops">tan</span><span ontouchend="r('fact')" class="ops">x!</span><span ontouchend="r(4)" class="nums">4</span><span ontouchend="r(5)" class="nums">5</span><span ontouchend="r(6)" class="nums">6</span><span ontouchend="r('-')" class="ops">&ndash;</span></div>
+            <div><span ontouchend="r('log')" class="ops">log</span><span ontouchend="r('pow')" class="ops">x<sup>y</sup></span><span ontouchend="r(1)" class="nums">1</span><span ontouchend="r(2)" class="nums">2</span><span ontouchend="r(3)" class="nums">3</span><span ontouchend="r('*')" class="ops">&#215;</span></div>
+            <div><span ontouchend="r('exp')" class="nums">e</span><span ontouchend="r('pi')" class="nums">&pi;</span><span ontouchend="r('.')" class="nums">.</span><span ontouchend="r(0)" class="nums">0</span><span ontouchend="r('=')" style="background:blue" class="ops">=</span><span ontouchend="r('/')" class="ops">&#247;</span></div>
         </div>
     </td></tr>
     </table>

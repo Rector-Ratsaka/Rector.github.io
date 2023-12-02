@@ -11,15 +11,18 @@
     <h1>Scientific Calculator</h1>
     <p>This is an online Scientific Calculator.<br>You can click the buttons or type to perform calculations.</p>
     <button onclick="toggleDarkLightMode()">Toggle dark/light mode</button>
+
     <table align="center"><tr><td id="out">
+        <button onclick="setTrigMode('deg')" id="degButton">Deg</button>
+        <button onclick="setTrigMode('rad')" id="radButton">Rad</button>
         <div>
             <div id="InPut">&nbsp;</div>
             <div id="OutPut">0</div>
         </div>
         <div>
-            <div><span onclick="r('sin')" class="ops">sin</span><span onclick="r('%')" class="ops">%</span><span onclick="r('(')" class="ops">(</span><span onclick="r(')')" class="ops">)</span><span onclick="r('C')" class="ops">AC</span><span onclick="r('back')" class="ops">&#8592;</span></div>
-            <div><span onclick="r('cos')" class="ops">cos</span><span onclick="r('sqrt')" class="ops">&#8730;</span><span onclick="r(7)" class="nums">7</span><span onclick="r(8)" class="nums">8</span><span onclick="r(9)" class="nums">9</span><span onclick="r('+')" class="ops">+</span></div>
-            <div><span onclick="r('tan')" class="ops">tan</span><span onclick="r('fact')" class="ops">x!</span><span onclick="r(4)" class="nums">4</span><span onclick="r(5)" class="nums">5</span><span onclick="r(6)" class="nums">6</span><span onclick="r('-')" class="ops">&ndash;</span></div>
+            <div><span onclick="trigFunctions('sin')" class="ops">sin</span><span onclick="r('%')" class="ops">%</span><span onclick="r('(')" class="ops">(</span><span onclick="r(')')" class="ops">)</span><span onclick="r('C')" class="ops">AC</span><span onclick="r('back')" class="ops">&#8592;</span></div>
+            <div><span onclick="trigFunctions('cos')" class="ops">cos</span><span onclick="r('sqrt')" class="ops">&#8730;</span><span onclick="r(7)" class="nums">7</span><span onclick="r(8)" class="nums">8</span><span onclick="r(9)" class="nums">9</span><span onclick="r('+')" class="ops">+</span></div>
+            <div><span onclick="trigFunctions('tan')" class="ops">tan</span><span onclick="r('fact')" class="ops">x!</span><span onclick="r(4)" class="nums">4</span><span onclick="r(5)" class="nums">5</span><span onclick="r(6)" class="nums">6</span><span onclick="r('-')" class="ops">&ndash;</span></div>
             <div><span onclick="r('log')" class="ops">log</span><span onclick="r('pow')" class="ops">x<sup>y</sup></span><span onclick="r(1)" class="nums">1</span><span onclick="r(2)" class="nums">2</span><span onclick="r(3)" class="nums">3</span><span onclick="r('*')" class="ops">&#215;</span></div>
             <div><span onclick="r('exp')" class="nums">e</span><span onclick="r('pi')" class="nums">&pi;</span><span onclick="r('.')" class="nums">.</span><span onclick="r(0)" class="nums">0</span><span onclick="r('=')" style="background:blue" class="ops">=</span><span onclick="r('/')" class="ops">&#247;</span></div>
         </div>

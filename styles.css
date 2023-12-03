@@ -3,9 +3,17 @@ body {
     text-align: center;
     transition: background-color 0.5s ease;
 }
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
 .dark-mode {
     background-color: black;
     color: white;
+}
+.blue-button {
+    background-color: blue;
 }
 
 h1,p {color:blue}
@@ -42,8 +50,8 @@ h1,p {color:blue}
 	vertical-align: middle;
 	padding: 5px;
 	text-align:center;
-	width:60px;
-	height:35px;
+	width:55px;
+	height:32px;
 	margin:1px;
 	border:1px solid #a2bbd4;
 	border-radius: 3px;
@@ -58,8 +66,8 @@ h1,p {color:blue}
 	vertical-align: middle;
 	padding: 5px;
 	text-align:center;
-	width:60px;
-	height:35px;
+	width:55px;
+	height:32px;
 	margin:1px;
 	border:1px solid #a2bbd4;
 	border-radius: 3px;
@@ -68,8 +76,4 @@ h1,p {color:blue}
 	font-weight:bold;
 	background-color:SkyBlue;
 }
-button.deg.active,
-button.rad.active {
-  background-color: #333; /* Dark background for the active mode */
-  color: #fff; /* White text on dark background */
-}
+

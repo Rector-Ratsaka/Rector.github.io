@@ -6,16 +6,16 @@
     <title>Scientific Calculator</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
-    <script src="ScientificCalculator.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.1.0/math.js" integrity="sha512-bJoAPYQ2bOZCtRLkShanIf6IMJAs+8oAmdq5Qjra47q/2ggFXhQeDycgJciFdatpPmS833KvRE7wU/gLqdxz8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="ScientificCalculator.js" async></script>
 </head>
 <body>
     <h1>Scientific Calculator</h1>
     <p>This is an online Scientific Calculator.<br>You can click the buttons or type to perform calculations.</p>
-    <button onclick="toggleDarkLightMode()">Toggle dark/light mode</button>
-
+    <button onclick="toggleDarkLightMode('light')" id="lightM" class="mode-button" >💡Light mode</button>
+    <button onclick="toggleDarkLightMode('dark')" id="darkM" class="mode-button">🌙Dark mode</button>
     <table align="center"><tr><td id="out">
-        <button onclick="setTrigMode('deg')" id="degButton">Deg</button>
-        <button onclick="setTrigMode('rad')" id="radButton">Rad</button>
+        <button onclick="setTrigMode('deg')" id="mode">Deg</button>
+        <button onclick="setTrigMode('rad')" id="mode1">Rad</button>
         <div>
             <div id="InPut">&nbsp;</div>
             <div id="OutPut">0</div>
@@ -31,7 +31,4 @@
     </table>
 </body>
 </html>
-
-
-<!--deg/rad switch-->
 

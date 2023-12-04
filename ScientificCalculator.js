@@ -11,28 +11,44 @@ function toggleDarkLightMode(mode) {
         body.classList.add("light-mode");
         document.getElementById("lightM").classList.add("blue-button");
         document.getElementById("darkM").classList.remove("blue-button");
+        // Save the current mode to local storage
+        localStorage.setItem("mode", "light");
     } else if (mode === 'dark') {
         body.classList.remove("light-mode");
         body.classList.add("dark-mode");
         document.getElementById("darkM").classList.add("blue-button");
         document.getElementById("lightM").classList.remove("blue-button");
+        // Save the current mode to local storage
+        localStorage.setItem("mode", "dark");
     }
 }
+// Function to set the initial mode based on local storage
+function setInitialMode() {
+    var savedMode = localStorage.getItem("mode");
+    if (savedMode === "dark") {
+        toggleDarkLightMode('dark');
+    } else {
+        toggleDarkLightMode('light');
+    }
+}
+// Call setInitialMode when the page loads
+window.onload = setInitialMode();
 
 document.addEventListener("keydown", function(event) {
         handleKeyPress(event.key);
     });
 
-    function handleKeyPress(key) {
-        // Check if the pressed key is a number or an operator
-        if (!isNaN(key) || "+-*/.".includes(key)) {
-            r(key); // Call the function to handle the input
-        } else if (key === "Enter") {
-            r('='); // Pressing Enter will act as "="
-        } else if (key === "Backspace") {
-            r('back'); // Pressing Backspace will act as backspace
-        }
+function handleKeyPress(key) {
+    // Check if the pressed key is a number or an operator
+    if (!isNaN(key) || "^()+-*/.".includes(key)) {
+        r(key);
+    } else if (key === "Enter") {
+        r('='); // Pressing Enter will act as "="
+    } else if (key === "Backspace") {
+        r('back'); // Pressing Backspace will act as backspace
     }
+    updateDisplay();
+}
 
 function r(value) {
    if (value === '=') {
@@ -45,15 +61,15 @@ function r(value) {
  } else {
    const funcs = ['sin', 'cos', 'tan', 'sqrt','exp','log10'];
    if (funcs.includes(value)) {
-     expression += `math.${value}(`;
+     expression += `Math.${value}(`;
    } else if (value === '%') {
      expression += '/100';
    } else if (value === 'pi') {
-     expression += 'math.pi';
+     expression += 'Math.pi';
    }else if (value=='fact'){
      expression+='factorial(';
    }else if (value=='pow'){
-     expression+='**';
+     expression+='^';
    } else {
      expression += value;
    }
@@ -64,13 +80,6 @@ function r(value) {
 function updateDisplay() {
   inputElement.innerText = expression;
 }
-
-function isValidInput(expression) {
-  const validInputRegex = /^[0-9+\-*/().\s]+$/;
-  return validInputRegex.test(expression);
-}
-
-
 function calculate() {
   try {
     const result = math.evaluate(expression);

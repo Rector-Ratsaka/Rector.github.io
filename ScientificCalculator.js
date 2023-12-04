@@ -22,6 +22,15 @@ function toggleDarkLightMode(mode) {
         localStorage.setItem("mode", "dark");
     }
 }
+function setTrigMode(mode){
+    if (mode=='deg'){
+        document.getElementById("mode").classList.add("blue-button");
+        document.getElementById("mode1").classList.remove("blue-button");
+    }else if (mode=='rad'){
+        document.getElementById("mode1").classList.add("blue-button");
+        document.getElementById("mode").classList.remove("blue-button");
+    }
+}
 // Function to set the initial mode based on local storage
 function setInitialMode() {
     var savedMode = localStorage.getItem("mode");
@@ -61,11 +70,11 @@ function r(value) {
  } else {
    const funcs = ['sin', 'cos', 'tan', 'sqrt','exp','log10'];
    if (funcs.includes(value)) {
-     expression += `Math.${value}(`;
+     expression += `${value}(`;
    } else if (value === '%') {
      expression += '/100';
    } else if (value === 'pi') {
-     expression += 'Math.pi';
+     expression += 'pi';
    }else if (value=='fact'){
      expression+='factorial(';
    }else if (value=='pow'){
@@ -82,7 +91,7 @@ function updateDisplay() {
 }
 function calculate() {
   try {
-    const result = math.evaluate(expression);
+    const result = math.compile(expression).evaluate();
     outputElement.innerText = result.toString();
     updateDisplay();
   } catch (error) {
